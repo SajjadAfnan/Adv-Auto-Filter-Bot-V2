@@ -206,6 +206,7 @@ async def auto_filter(bot, update):
                 text=f"<b>{query}</b>\n<i>({(len_results)} Results)</i>\n\n⭕️ <i>If you didn't get required movie pls contact us</i> <b><a href='http://t.me/Malayalam_Movees_Bot?start'>👉 𝗖𝗹𝗶𝗰𝗸 𝗛𝗲𝗿𝗲 👈</a></b>\n\n🛑You must Join Channels to access the links given below🛑\n\n<b><a href='https://t.me/joinchat/MkxtxaJhFHYxZTg1'>✅ 𝗠𝗼𝘃𝗶𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹</a> ©\n<a href='https://t.me/joinchat/WQNEfDIqGDpkYzcx'>✅ 𝗦𝗲𝗿𝗶𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 </a> ©</b>",
                 reply_markup=reply_markup,
                 parse_mode="html",
+                disable_web_page_preview=True,
                 reply_to_message_id=update.message_id
             )
 
