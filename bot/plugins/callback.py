@@ -156,7 +156,8 @@ async def cb_navg(bot, update: CallbackQuery):
         await update.message.edit(
                 text,
                 reply_markup=reply_markup,
-                parse_mode="html"
+                parse_mode="html",
+                disable_web_page_preview=True
         )
 
 
