@@ -47,14 +47,14 @@ async def start(bot, update):
             await update.reply_cached_media(
                 file_id,
                 quote=True,
-                caption = caption,
+                caption = f"📁 <b>Name:</b>\n<code>{file_name}</code>\n<b>━━━━━━━━━━━━━━━━━━━━━\n𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞 𝚏𝚘𝚛 𝚞𝚜𝚒𝚗𝚐 𝚘𝚞𝚛 𝚜𝚎𝚛𝚟𝚒𝚌𝚎 ❣\n 𝚙𝚕𝚎𝚊𝚜𝚎 𝚜𝚑𝚊𝚛𝚎 𝚘𝚞𝚛 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 / 𝚐𝚛𝚘𝚞𝚙 𝚕𝚒𝚗𝚔 𝚝𝚘 𝚢𝚘𝚞𝚛 𝚏𝚛𝚒𝚎𝚗𝚍𝚜.\n━━━━━━━━━━━━━━━━━━━━━\n𝗠𝗼𝘃𝗶𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: https://t.me/joinchat/MkxtxaJhFHYxZTg1\n𝗦𝗲𝗿𝗶𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: https://t.me/joinchat/WQNEfDIqGDpkYzcx\n𝗠𝗼𝘃𝗶𝗲 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗚𝗿𝗼𝘂𝗽:\nhttps://t.me/joinchat/K2o-tUzqY4FjOWRl</b>",
                 parse_mode="html",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton
                                 (
-                                    'Developers', url="https://t.me/mallu_movies_group2"
+                                    'Movie Request Group', url="https://t.me/mallu_movies_group2"
                                 )
                         ]
                     ]
@@ -82,6 +82,7 @@ async def start(bot, update):
                 update.from_user.first_name),
         reply_markup=reply_markup,
         parse_mode="html",
+        disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
 
@@ -102,6 +103,7 @@ async def help(bot, update):
         text=Translation.HELP_TEXT,
         reply_markup=reply_markup,
         parse_mode="html",
+        disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
 
