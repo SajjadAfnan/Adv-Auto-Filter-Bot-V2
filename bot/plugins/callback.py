@@ -142,7 +142,7 @@ async def cb_navg(bot, update: CallbackQuery):
     
     reply_markup = InlineKeyboardMarkup(temp_results)
     
-    text=f"<i>Found</i> <code>{leng}</code> <i>Results For Your Query:</i> <code>{query}</code>"
+    text=f"<b>{query}</b>\n<i>({leng} Results)</i>\n\n⭕️ <i>If you didn't get required movie pls contact us</i> <b><a href='http://t.me/Malayalam_Movees_Bot?start'>👉 𝗖𝗹𝗶𝗰𝗸 𝗛𝗲𝗿𝗲 👈</a></b>\n\n🛑You must Join Channels to access the links given below🛑\n\n<b><a href='https://t.me/joinchat/MkxtxaJhFHYxZTg1'>✅ 𝗠𝗼𝘃𝗶𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹</a> ©\n<a href='https://t.me/joinchat/WQNEfDIqGDpkYzcx'>✅ 𝗦𝗲𝗿𝗶𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 </a> ©</b>"
         
     try:
         await update.message.edit(
@@ -1639,10 +1639,10 @@ async def callback_data(bot, update: CallbackQuery):
 
     if query_data == "start":
         buttons = [[
-            InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/AlbertEinstein_TG'),
-            InlineKeyboardButton('Source Code 🧾', url ='https://github.com/CrazyBotsz/Adv-Filter-Bot-V2')
+            InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/+K2o-tUzqY4FjOWRl'),
+            InlineKeyboardButton('Source Code 🧾', url ='https://t.me/+K2o-tUzqY4FjOWRl')
         ],[
-            InlineKeyboardButton('Support 🛠', url='https://t.me/CrazyBotszGrp')
+            InlineKeyboardButton('Support 🛠', url='https://t.me/+K2o-tUzqY4FjOWRl')
         ],[
             InlineKeyboardButton('Help ⚙', callback_data="help")
         ]]
