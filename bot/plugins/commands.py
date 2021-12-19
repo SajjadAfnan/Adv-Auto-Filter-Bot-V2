@@ -4,6 +4,7 @@
 
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
+from pyrogram.errors import UserNotParticipant
 from bot import Translation, LOGGER # pylint: disable=import-error
 from bot.database import Database # pylint: disable=import-error
 
@@ -11,7 +12,25 @@ db = Database()
 
 @Client.on_message(filters.command(["start"]) & filters.private, group=1)
 async def start(bot, update):
-    
+    update_channel = "@minnal_kurup_murali"
+    if update_channel:
+        try:
+            user = await bot.get_chat_member(update_channel, update.chat.id)
+            if user.status == "kicked out":
+               await update.reply_text("🤭 Sorry Dude, You are B A N N E D 🤣🤣🤣")
+               return
+        except UserNotParticipant:
+            #await update.reply_text(f"Join @{update_channel} To Use Me")
+            await update.reply_text(
+                text="🔊 <b>ഞങ്ങളുടെ 𝙈𝙖𝙞𝙣 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 ജോയിൻ ചെയ്താൽ മാത്രമേ സിനിമ ലഭിക്കുകയുള്ളൂ. 🤷‍♂ \n ചാനലിൽ join ചെയ്തിട്ട് ഒന്നുകൂടി Try ചെയ്യ്. ❤️</b>😁",
+                reply_markup=InlineKeyboardMarkup([
+                    [ InlineKeyboardButton(text=" ⭕JOIN OUR CHANNEL⭕ ", url=f"https://t.me/minnal_kurup_murali")]
+              ])
+            )
+            return
+        except Exception:
+            await update.reply_text("Something Wrong. Contact my Support Group")
+            return    
     try:
         file_uid = update.command[1]
     except IndexError:
