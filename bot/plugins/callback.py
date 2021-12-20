@@ -1640,12 +1640,7 @@ async def callback_data(bot, update: CallbackQuery):
 
     if query_data == "start":
         buttons = [[
-            InlineKeyboardButton('My Dev 👨‍🔬', url='https://t.me/+K2o-tUzqY4FjOWRl'),
-            InlineKeyboardButton('Source Code 🧾', url ='https://t.me/+K2o-tUzqY4FjOWRl')
-        ],[
-            InlineKeyboardButton('Support 🛠', url='https://t.me/+K2o-tUzqY4FjOWRl')
-        ],[
-            InlineKeyboardButton('Help ⚙', callback_data="help")
+            InlineKeyboardButton('Close 🔐', callback_data='close')
         ]]
     
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1661,8 +1656,6 @@ async def callback_data(bot, update: CallbackQuery):
     elif query_data == "help":
         buttons = [[
             InlineKeyboardButton('Home ⚡', callback_data='start'),
-            InlineKeyboardButton('About 🚩', callback_data='about')
-        ],[
             InlineKeyboardButton('Close 🔐', callback_data='close')
         ]]
     
