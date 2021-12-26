@@ -52,11 +52,15 @@ async def start(bot, update):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton
-                                (
-                                    'Movie Request Group', url="https://t.me/mallu_movies_group2"
-                                )
-                        ]
+                            reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton('🎁 Share 🎁', url='https://t.me/share/url?url=%E0%B4%AA%E0%B5%81%E0%B4%A4%E0%B4%BF%E0%B4%AF%20%E0%B4%B8%E0%B4%BF%E0%B4%A8%E0%B4%BF%E0%B4%AE%E0%B4%95%E0%B5%BE%20%E0%B4%9F%E0%B5%86%E0%B4%B2%E0%B4%97%E0%B5%8D%E0%B4%B0%E0%B4%BE%E0%B4%82%20%E0%B4%87%E0%B4%B1%E0%B4%99%E0%B5%8D%E0%B4%99%E0%B5%81%E0%B4%AE%E0%B5%8D%E0%B4%AA%E0%B5%8B%E0%B5%BE%20%E0%B4%A4%E0%B4%A8%E0%B5%8D%E0%B4%A8%E0%B5%86%20%E0%B4%A8%E0%B5%8B%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B4%BF%E0%B4%AB%E0%B4%BF%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%87%E0%B4%B7%E0%B5%BB%20%E0%B4%B2%E0%B4%AD%E0%B4%BF%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%81%E0%B4%B5%E0%B4%BE%E0%B5%BB%20%E0%B4%A4%E0%B4%BE%E0%B4%B4%E0%B5%86%20%E0%B4%95%E0%B4%BE%E0%B4%A3%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%20%E0%B4%9A%E0%B4%BE%E0%B4%A8%E0%B4%B2%E0%B4%BF%E0%B5%BD%20%E0%B4%9C%E0%B5%8B%E0%B4%AF%E0%B4%BF%E0%B5%BB%20%E0%B4%9A%E0%B5%86%E0%B4%AF%E0%B5%8D%E0%B4%AF%E0%B5%81%E0%B4%95%20%F0%9F%A5%B3%0A%E2%9C%85%20https%3A%2F%2Ft.me%2Fjoinchat%2FMkxtxaJhFHYxZTg1%20%0A%0A%E0%B4%B8%E0%B4%BF%E0%B4%A8%E0%B4%BF%E0%B4%AE%20%E0%B4%8F%E0%B4%A4%E0%B5%81%E0%B4%AE%E0%B4%BE%E0%B4%AF%E0%B4%BF%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%8B%E0%B4%9F%E0%B5%8D%E0%B4%9F%E0%B5%86%F0%9F%A4%B7%E2%80%8D%E2%99%82.%20%E0%B4%AA%E0%B5%87%E0%B4%B0%E0%B5%8D%20%E0%B4%85%E0%B4%9F%E0%B4%BF%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%BE%E0%B5%BD%20%E0%B4%85%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%8B%E0%B5%BE%E0%B4%A4%E0%B4%A8%E0%B5%8D%E0%B4%A8%E0%B5%86%20%E0%B4%B2%E0%B4%BF%E0%B4%99%E0%B5%8D%E0%B4%95%E0%B5%8D%20%E0%B4%B2%E0%B4%AD%E0%B4%BF%E0%B4%95%E0%B5%8D%E0%B4%95%E0%B5%81%E0%B4%A8%E0%B5%8D%E0%B4%A8%20Group%F0%9F%98%8D%F0%9F%98%8D%0A%E2%9C%85%20https%3A%2F%2Ft.me%2Fjoinchat%2FK2o-tUzqY4FjOWRl'),
+                         ],[
+                            InlineKeyboardButton('Movies', url='https://t.me/joinchat/MkxtxaJhFHYxZTg1'),
+                            InlineKeyboardButton('Series', url ='https://t.me/joinchat/WQNEfDIqGDpkYzcx')
+                         ],[
+                            InlineKeyboardButton('🔍 Movie Request Group🔎', url ='https://t.me/joinchat/K2o-tUzqY4FjOWRl')
+                        ]]
                     ]
                 )
             )
