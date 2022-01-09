@@ -24,7 +24,7 @@ async def start(bot, update):
             await update.reply_text(
                 text="🔊 <b>ഞങ്ങളുടെ 𝙈𝙖𝙞𝙣 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 ജോയിൻ ചെയ്താൽ മാത്രമേ സിനിമ ലഭിക്കുകയുള്ളൂ. 🤷‍♂ \n ചാനലിൽ join ചെയ്തിട്ട് ഒന്നുകൂടി Try ചെയ്യ്. ❤️</b>😁",
                 reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton(text=" ⭕JOIN OUR CHANNEL⭕ ", url=f"https://t.me/Pushpa_Minnal_murali_2021")]
+                    [ InlineKeyboardButton(text=" ⭕JOIN OUR CHANNEL⭕ ", url=Translation.MOVIES)]
               ])
             )
             return
@@ -47,16 +47,16 @@ async def start(bot, update):
             await update.reply_cached_media(
                 file_id,
                 quote=True,
-                caption = f"📁 <b>Name:</b>\n<code>{file_name}</code>\n<b>━━━━━━━━━━━━━━━━━━━━━\n𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞 𝚏𝚘𝚛 𝚞𝚜𝚒𝚗𝚐 𝚘𝚞𝚛 𝚜𝚎𝚛𝚟𝚒𝚌𝚎 ❣\n 𝚙𝚕𝚎𝚊𝚜𝚎 𝚜𝚑𝚊𝚛𝚎 𝚘𝚞𝚛 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 / 𝚐𝚛𝚘𝚞𝚙 𝚕𝚒𝚗𝚔 𝚝𝚘 𝚢𝚘𝚞𝚛 𝚏𝚛𝚒𝚎𝚗𝚍𝚜.\n━━━━━━━━━━━━━━━━━━━━━\n𝗠𝗼𝘃𝗶𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: https://t.me/joinchat/MkxtxaJhFHYxZTg1\n𝗦𝗲𝗿𝗶𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: https://t.me/joinchat/WQNEfDIqGDpkYzcx\n𝗠𝗼𝘃𝗶𝗲 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗚𝗿𝗼𝘂𝗽:\nhttps://t.me/joinchat/K2o-tUzqY4FjOWRl</b>",
+                caption = f"📁 <b>Name:</b>\n<code>{file_name}</code>\n<b>━━━━━━━━━━━━━━━━━━━━━\n𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞 𝚏𝚘𝚛 𝚞𝚜𝚒𝚗𝚐 𝚘𝚞𝚛 𝚜𝚎𝚛𝚟𝚒𝚌𝚎 ❣\n 𝚙𝚕𝚎𝚊𝚜𝚎 𝚜𝚑𝚊𝚛𝚎 𝚘𝚞𝚛 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 / 𝚐𝚛𝚘𝚞𝚙 𝚕𝚒𝚗𝚔 𝚝𝚘 𝚢𝚘𝚞𝚛 𝚏𝚛𝚒𝚎𝚗𝚍𝚜.\n━━━━━━━━━━━━━━━━━━━━━\n𝗠𝗼𝘃𝗶𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹:\n" + Translation.MOVIES + f"https://t.me/joinchat/MkxtxaJhFHYxZTg1\n𝗦𝗲𝗿𝗶𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹:\n" +Translation.SERIES + f"https://t.me/joinchat/WQNEfDIqGDpkYzcx\n𝗠𝗼𝘃𝗶𝗲 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗚𝗿𝗼𝘂𝗽:\n" + Translation.GROUP + "</b>",
                 parse_mode="html",
                 reply_markup=InlineKeyboardMarkup(
                     [[
-                       InlineKeyboardButton('🎁 Share 🎁', url='Translation.SHARE'),
+                       InlineKeyboardButton('🎁 Share 🎁', url=Translation.SHARE),
                      ],[
-                       InlineKeyboardButton('Movies', url='Translation.MOVIES'),
-                       InlineKeyboardButton('Series', url ='Translation.SERIES')
+                       InlineKeyboardButton('Movies', url=Translation.MOVIES),
+                       InlineKeyboardButton('Series', url =Translation.SERIES)
                      ],[
-                       InlineKeyboardButton('🔍 Movie Request Group🔎', url ='Translation.GROUP')
+                       InlineKeyboardButton('🔍 Movie Request Group🔎', url =Translation.GROUP)
                     ]]
                )
             )
@@ -66,12 +66,12 @@ async def start(bot, update):
         return
 
     buttons = [[
-                       InlineKeyboardButton('🎁 Share 🎁', url='Translation.SHARE'),
+                       InlineKeyboardButton('🎁 Share 🎁', url=Translation.SHARE),
     ],[
-                       InlineKeyboardButton('Movies', url='url='Translation.MOVIES''),
-                       InlineKeyboardButton('Series', url ='='Translation.SERIES'')
+                       InlineKeyboardButton('Movies', url=Translation.MOVIES),
+                       InlineKeyboardButton('Series', url =Translation.SERIES)
     ],[
-                       InlineKeyboardButton('🔍 Movie Request Group🔎', url ='Translation.GROUP')
+                       InlineKeyboardButton('🔍 Movie Request Group🔎', url =Translation.GROUP)
     ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
