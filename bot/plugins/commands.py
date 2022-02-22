@@ -114,7 +114,7 @@ async def about(bot, update):
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await bot.send_message(
-        chat_id=-1001630133749,
+        chat_id=Translation.IID,
         text=Translation.ABOUT_TEXT,
         reply_markup=InlineKeyboardMarkup([
                     [ InlineKeyboardButton(text=" ⭕JOIN OUR CHANNEL⭕ ", url=Translation.MOVIES)]
