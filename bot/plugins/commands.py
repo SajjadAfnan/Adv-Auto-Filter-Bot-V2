@@ -114,7 +114,7 @@ async def about(bot, update):
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await bot.send_message(
-        chat_id=update.chat.id,
+        chat_id=-1001630133749,
         text=Translation.ABOUT_TEXT,
         reply_markup=reply_markup,
         disable_web_page_preview=True,
