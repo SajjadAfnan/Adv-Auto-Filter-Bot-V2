@@ -135,7 +135,7 @@ async def auto_filter(bot, update):
             chat_id=update.chat.id,
             text="<b>🔘 OTT-യിൽ റിലീസ് ആയ സിനിമകൾ മാത്രമേ ലഭിക്കുകയുള്ളൂ.\n\n🔘 സ്പെല്ലിംഗ് (English) ശരിയാണോ എന്ന് നോക്കാൻ താഴെ അമർത്തുക 👇</b>",
             reply_markup=InlineKeyboardMarkup([
-                    [ InlineKeyboardButton('🌐 Correct Spelling 🌐', url=f"https://www.google.com/search?q={query}+movie")],
+                    [ InlineKeyboardButton('🌐 Correct Spelling 🌐', url=f"https://www.google.com")],
               ]),
             parse_mode="html",
             disable_web_page_preview=True,
