@@ -60,18 +60,6 @@ async def start(bot, update):
                     ]]
                )
             )
-            try:
-                 await bot.send_message(
-                   chat_id=-1001770753985,
-                   text=Translation.START_TEXT.format(
-                   update.from_user.mention),
-                   parse_mode="html",
-                   disable_web_page_preview=True,
-                 )
-            except Exception as e:
-                 await update.reply_text(f"<b>Error:</b>\n<code>{e}</code>", True, parse_mode="html")
-                 LOGGER(__name__).error(e)
-            return
         except Exception as e:
             await update.reply_text(f"<b>Error:</b>\n<code>{e}</code>", True, parse_mode="html")
             LOGGER(__name__).error(e)
