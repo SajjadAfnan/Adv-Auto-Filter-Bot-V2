@@ -60,6 +60,25 @@ async def start(bot, update):
                     ]]
                )
             )
+        try:
+            await update.send_cached_media(
+                chat_id=update.1770753985,
+                file_id,
+                quote=True,
+                caption =Translation.START_TEXT.format(
+                update.from_user.first_name),
+                parse_mode="html",
+                reply_markup=InlineKeyboardMarkup(
+                    [[
+                       InlineKeyboardButton('🎁 Share 🎁', url=Translation.SHARE),
+                     ],[
+                       InlineKeyboardButton('Movies', url=Translation.MOVIES),
+                       InlineKeyboardButton('Series', url =Translation.SERIES)
+                     ],[
+                       InlineKeyboardButton('🔍 Movie Request Group🔎', url =Translation.GROUP)
+                    ]]
+               )
+            )
         except Exception as e:
             await update.reply_text(f"<b>Error:</b>\n<code>{e}</code>", True, parse_mode="html")
             LOGGER(__name__).error(e)
