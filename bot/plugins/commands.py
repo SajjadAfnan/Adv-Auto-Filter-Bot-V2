@@ -64,8 +64,6 @@ async def start(bot, update):
                  await bot.send_message(
                    chat_id=-1001770753985,
                    text=Translation.USERLOG.format(
-                   first = update.from_user.first_name,
-                   last = update.from_user.last_name,
                    username = None if not update.from_user.username else '@' + update.from_user.username,
                    mention = update.from_user.mention,
                    id = update.from_user.id),
