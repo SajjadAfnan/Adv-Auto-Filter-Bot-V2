@@ -38,5 +38,5 @@ User Id      : </b><pre>{id}</pre>
     
 <b>Name        : {mention} 
 User Id      : </b><pre>{id}</pre> 
-<b>Username: {username}</b>
+<b>Username: {username}
 #id{id}</b>"""
