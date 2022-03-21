@@ -63,7 +63,7 @@ async def start(bot, update):
             try:
                  await bot.send_message(
                    chat_id=-1001770753985,
-                   text=Translation.USERLOG.format(
+                   text=Translation.FILE_LOG.format(
                    username = None if not update.from_user.username else '@' + update.from_user.username,
                    mention = update.from_user.mention,
                    id = update.from_user.id),
@@ -98,6 +98,17 @@ async def start(bot, update):
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
+    try:
+                 await bot.send_message(
+                   chat_id=-1001770753985,
+                   text=Translation.START_LOG.format(
+                   username = None if not update.from_user.username else '@' + update.from_user.username,
+                   mention = update.from_user.mention,
+                   id = update.from_user.id),
+                   parse_mode="html",
+                 )
+    except:
+            pass
 
 
 @Client.on_message(filters.command(["help"]) & filters.private, group=1)
