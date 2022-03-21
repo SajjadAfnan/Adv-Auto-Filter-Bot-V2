@@ -33,7 +33,7 @@ class Translation(object):
 Name    : {mention} 
 User Id : </b><pre>{id}</pre> 
 <b>Username: {username}</b>"""
-    FILE_LOG = """📂 <b>Mallu Movies Bot 
+    FILE_LOG = """🗂 <b>Mallu Movies Bot 
  
 Name    : {mention} 
 User Id : </b><pre>{id}</pre> 
