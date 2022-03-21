@@ -62,7 +62,7 @@ async def start(bot, update):
             )
         try:
             await update.send_cached_media(
-                chat_id=1770753985,
+                chat_id=-1001770753985,
                 file_id,
                 quote=True,
                 caption =Translation.START_TEXT.format(
