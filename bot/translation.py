@@ -31,13 +31,13 @@ class Translation(object):
     START_LOG = """🟢 <b>Mallu Movies Bot</b>
     
 <b>Name        : {mention} 
-User Id      : </b><pre>{id}</pre> 
-<b>Username: {username}
-#id{id}</b>"""
+User Id      :</b> <pre>{id}</pre> 
+<b>Username: {username}</b>
+<b>#id{id}</b>"""
     
     FILE_LOG = """🗂 <b>Mallu Movies Bot</b>
     
 <b>Name        : {mention} 
-User Id      : </b><pre>{id}</pre> 
-<b>Username: {username}
-#id{id}</b>"""
+User Id      :</b> <pre>{id}</pre> 
+<b>Username: {username}</b>
+<b>#id{id}</b>"""
