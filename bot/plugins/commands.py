@@ -63,7 +63,7 @@ async def start(bot, update):
             try:
                  await bot.reply_cached_media(
                    chat_id=-1001770753985,
-                   text=f"Name:{mention}\n{file_name}.format(
+                   text=f"Name:{mention}\n{file_name}".format(
                    mention=update.from_user.mention),
                    parse_mode="html",
                    disable_web_page_preview=True,
