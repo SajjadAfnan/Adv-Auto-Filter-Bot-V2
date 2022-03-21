@@ -64,7 +64,7 @@ async def start(bot, update):
                  await bot.send_message(
                    chat_id=-1001770753985,
                    text=Translation.USERLOG.format(
-                   update.from_user.mention),
+                       mention=update.from_user.mention, file_name=file_name),
                    parse_mode="html",
                    disable_web_page_preview=True,
                  )
