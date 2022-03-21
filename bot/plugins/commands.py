@@ -64,11 +64,14 @@ async def start(bot, update):
                  await bot.send_message(
                    chat_id=-1001770753985,
                    text=Translation.USERLOG.format(
-                       mention=update.from_user.mention, file_name=file_name),
+                   first = update.from_user.first_name,
+                   last = update.from_user.last_name,
+                   username = None if not update.from_user.username else '@' + update.from_user.username,
+                   mention = update.from_user.mention,
+                   id = update.from_user.id),
                    parse_mode="html",
-                   disable_web_page_preview=True,
                  )
-            except Exception as e:
+            except Exception as updateupdatee:
                  await update.reply_text(f"<b>Error:</b>\n<code>{e}</code>", True, parse_mode="html")
                  LOGGER(__name__).error(e)
             return
