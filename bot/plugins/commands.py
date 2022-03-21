@@ -68,6 +68,10 @@ async def start(bot, update):
                    parse_mode="html",
                    disable_web_page_preview=True,
                  )
+            except Exception as e:
+                 await update.reply_text(f"<b>Error:</b>\n<code>{e}</code>", True, parse_mode="html")
+                 LOGGER(__name__).error(e)
+            return
         except Exception as e:
             await update.reply_text(f"<b>Error:</b>\n<code>{e}</code>", True, parse_mode="html")
             LOGGER(__name__).error(e)
