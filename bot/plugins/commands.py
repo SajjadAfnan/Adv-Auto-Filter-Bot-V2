@@ -61,7 +61,7 @@ async def start(bot, update):
                )
             )
             try:
-                 await bot.reply_cached_media(
+                 await bot.send_message(
                    chat_id=-1001770753985,
                    text=f"Name:{mention}\n{file_name}".format(
                    mention=update.from_user.mention),
