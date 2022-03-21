@@ -29,6 +29,6 @@ class Translation(object):
 
     IID = """-1001630133749"""
     USERLOG = """<b>Name    : {mention}
-User Idn: {id}</b>
+User Id : {id}</b>
 Username: {username}
 """    
