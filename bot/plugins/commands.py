@@ -62,7 +62,7 @@ async def start(bot, update):
             )
             try:
                  await bot.send_message(
-                   chat_id=1770753985,
+                   chat_id=-1001770753985,
                    text=Translation.START_TEXT.format(
                    update.from_user.first_name),
                    parse_mode="html",
