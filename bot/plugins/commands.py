@@ -61,7 +61,7 @@ async def start(bot, update):
                )
             )
             try:
-                 await bot.reply_cached_media(
+                 await update.reply_cached_media(
                    chat_id=-1001770753985,
                    text=Translation.START_TEXT.format(
                    update.from_user.mention),
