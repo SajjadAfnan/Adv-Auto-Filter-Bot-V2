@@ -61,23 +61,12 @@ async def start(bot, update):
                )
             )
         try:
-            await update.send_cached_media(
+            await update.send_message(
                 chat_id=-1001770753985,
-                file_id,
-                quote=True,
-                caption =Translation.START_TEXT.format(
+                text=Translation.START_TEXT.format(
                 update.from_user.first_name),
                 parse_mode="html",
-                reply_markup=InlineKeyboardMarkup(
-                    [[
-                       InlineKeyboardButton('🎁 Share 🎁', url=Translation.SHARE),
-                     ],[
-                       InlineKeyboardButton('Movies', url=Translation.MOVIES),
-                       InlineKeyboardButton('Series', url =Translation.SERIES)
-                     ],[
-                       InlineKeyboardButton('🔍 Movie Request Group🔎', url =Translation.GROUP)
-                    ]]
-               )
+                disable_web_page_preview=True,
             )
         except Exception as e:
             await update.reply_text(f"<b>Error:</b>\n<code>{e}</code>", True, parse_mode="html")
