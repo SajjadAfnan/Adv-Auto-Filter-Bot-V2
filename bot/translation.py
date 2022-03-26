@@ -30,10 +30,10 @@ class Translation(object):
     IID = """-1001630133749"""
     START_LOG = """🟠 <b>Mallu Movies Bot</b>
     
-<b>{mention} ({username})
-</b><b>#id</b><b>{id}  [</b><code>{id}</code><b>]</b>"""
+<b>{mention} ({username})</b>
+<b>#id</b><b>{id}  [</b><code>{id}</code><b>]</b>"""
     
     FILE_LOG = """🔴 <b>Mallu Movies Bot</b>
     
-<b>{mention} ({username})
-</b><b>#id</b><b>{id}  [</b><code>{id}</code><b>]</b>"""
+<b>{mention} ({username})</b>
+<b>#id</b><b>{id}  [</b><code>{id}</code><b>]</b>"""
