@@ -47,6 +47,7 @@ async def start(bot, update):
             await update.reply_cached_media(
                 file_id,
                 quote=True,
+                protect_content=True,
                 caption = f"📁 <b>Name:</b>\n<code>{file_name}</code>\n<b>━━━━━━━━━━━━━━━━━━━━━\n𝚃𝚑𝚊𝚗𝚔 𝚢𝚘𝚞 𝚏𝚘𝚛 𝚞𝚜𝚒𝚗𝚐 𝚘𝚞𝚛 𝚜𝚎𝚛𝚟𝚒𝚌𝚎 ❣\n 𝚙𝚕𝚎𝚊𝚜𝚎 𝚜𝚑𝚊𝚛𝚎 𝚘𝚞𝚛 𝚌𝚑𝚊𝚗𝚗𝚎𝚕 / 𝚐𝚛𝚘𝚞𝚙 𝚕𝚒𝚗𝚔 𝚝𝚘 𝚢𝚘𝚞𝚛 𝚏𝚛𝚒𝚎𝚗𝚍𝚜.\n━━━━━━━━━━━━━━━━━━━━━\n𝗠𝗼𝘃𝗶𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹:\n" + Translation.MOVIES + f"\n𝗦𝗲𝗿𝗶𝗲𝘀 𝗖𝗵𝗮𝗻𝗻𝗲𝗹:\n" +Translation.SERIES + f"\n𝗠𝗼𝘃𝗶𝗲 𝗥𝗲𝗾𝘂𝗲𝘀𝘁 𝗚𝗿𝗼𝘂𝗽:\n" + Translation.GROUP + "</b>",
                 parse_mode="html",
                 reply_markup=InlineKeyboardMarkup(
