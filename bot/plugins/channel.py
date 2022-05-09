@@ -25,7 +25,7 @@ async def connect(bot: Bot, update):
     
     if VERIFY.get(str(chat_id)) == None: # Make Admin's ID List
         admin_list = []
-        async for x in bot.iter_chat_members(chat_id=chat_id, filter="administrators"):
+        async for x in bot.get_chat_members(chat_id=chat_id, filter="administrators"):
             admin_id = x.user.id 
             admin_list.append(admin_id)
         admin_list.append(None)
@@ -103,15 +103,16 @@ async def connect(bot: Bot, update):
                 # Using 'if elif' instead of 'or' to determine 'file_type'
                 # Better Way? Make A PR
                 try:
+                    try:
+                        file_id = await bot.get_messages(channel_id, message_ids=msgs.id)
+                    except FloodWait as e:
+                        await asyncio.sleep(e.value)
+                        file_id = await bot.get_messages(channel_id, message_ids=msgs.id)
+                    except Exception as e:
+                        print(e)
+                        continue
+
                     if msgs.video:
-                        try:
-                            file_id = await bot.get_messages(channel_id, message_ids=msgs.message_id)
-                        except FloodWait as e:
-                            asyncio.sleep(e.x)
-                            file_id = await bot.get_messages(channel_id, message_ids=msgs.message_id)
-                        except Exception as e:
-                            print(e)
-                            continue
                         file_id = file_id.video.file_id
                         file_name = msgs.video.file_name[0:-4]
                         file_caption  = msgs.caption if msgs.caption else ""
@@ -119,14 +120,6 @@ async def connect(bot: Bot, update):
                         file_type = "video"
                     
                     elif msgs.audio:
-                        try:
-                            file_id = await bot.get_messages(channel_id, message_ids=msgs.message_id)
-                        except FloodWait as e:
-                            asyncio.sleep(e.x)
-                            file_id = await bot.get_messages(channel_id, message_ids=msgs.message_id)
-                        except Exception as e:
-                            print(e)
-                            continue
                         file_id = file_id.audio.file_id
                         file_name = msgs.audio.file_name[0:-4]
                         file_caption  = msgs.caption if msgs.caption else ""
@@ -134,19 +127,14 @@ async def connect(bot: Bot, update):
                         file_type = "audio"
                     
                     elif msgs.document:
-                        try:
-                            file_id = await bot.get_messages(channel_id, message_ids=msgs.message_id)
-                        except FloodWait as e:
-                            asyncio.sleep(e.x)
-                            file_id = await bot.get_messages(channel_id, message_ids=msgs.message_id)
-                        except Exception as e:
-                            print(str(e))
-                            continue
                         file_id = file_id.document.file_id
                         file_name = msgs.document.file_name[0:-4]
                         file_caption  = msgs.caption if msgs.caption else ""
                         file_size = msgs.document.file_size
                         file_type = "document"
+                    
+                    else:
+                        return
                     
                     for i in ["_", "|", "-", "."]: # Work Around
                         try:
@@ -207,7 +195,7 @@ async def disconnect(bot: Bot, update):
     
     if VERIFY.get(str(chat_id)) == None: # Make Admin's ID List
         admin_list = []
-        async for x in bot.iter_chat_members(chat_id=chat_id, filter="administrators"):
+        async for x in bot.get_chat_members(chat_id=chat_id, filter="administrators"):
             admin_id = x.user.id 
             admin_list.append(admin_id)
         admin_list.append(None)
@@ -271,7 +259,7 @@ async def delall(bot: Bot, update):
     
     if VERIFY.get(str(chat_id)) == None: # Make Admin's ID List
         admin_list = []
-        async for x in bot.iter_chat_members(chat_id=chat_id, filter="administrators"):
+        async for x in bot.get_chat_members(chat_id=chat_id, filter="administrators"):
             admin_id = x.user.id 
             admin_list.append(admin_id)
         admin_list.append(None)
@@ -286,7 +274,7 @@ async def delall(bot: Bot, update):
     await update.reply_text("Sucessfully Deleted All Connected Chats From This Group....")
 
 
-@Client.on_message(filters.channel & (filters.video | filters.audio | filters.document) & ~filters.edited, group=0)
+@Client.on_message(filters.channel & (filters.video | filters.audio | filters.document), group=0)
 async def new_files(bot: Bot, update):
     """
     A Funtion To Handle Incoming New Files In A Channel ANd Add Them To Respective Channels..
